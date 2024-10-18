@@ -37,7 +37,6 @@ CREATE TABLE `pets` (
   `location` varchar(100) NOT NULL,
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Indexes for dumped tables
 --

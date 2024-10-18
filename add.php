@@ -7,7 +7,8 @@
 
     // Check if there is a message set
     if (isset($_SESSION['message'])) {
-        // Display the message
+        // Display the messagewhich apache2
+
         echo '<div class="alert alert-' . $_SESSION['message']['type'] . '">' . $_SESSION['message']['text'] . '</div>';
         // Unset the session message
         unset($_SESSION['message']);
