@@ -10,6 +10,7 @@ error_reporting(E_ALL);
     <title>HomePage</title>
     <link rel="icon" type="image/png" href="/images/logo.png">
 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,6 +23,8 @@ error_reporting(E_ALL);
     <style>
 
     </style>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Js/main.js"></script>
 </head>
     <?php include ('includes/nav.inc') ?>
     <?php include ('includes/db_connect.inc') ?>
