@@ -1,7 +1,5 @@
-function navigate() {
-    var selectElement = document.getElementById("trips");
-    var selectedOption = selectElement.options[selectElement.selectedIndex].value;
-    if (selectedOption && selectedOption !== window.location.href) {
-        window.location.href = selectedOption;
-    }
-}
+// main.js
+document.getElementById('filterType').addEventListener('change', function() {
+    var selectedType = this.value;
+    window.location.href = "gallery.php?type=" + selectedType;
+});

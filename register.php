@@ -1,16 +1,20 @@
 <?php
-require_once 'db_connect.inc';
+include('inc/header.inc');
+include('inc/nav.inc');
+require_once 'inc/db_connect.inc';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $email = htmlspecialchars($_POST['email']);
 
     $sql = "INSERT INTO members (username, password, email) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$username, $password, $email]);
-
-    echo "Registration successful!";
+    if ($stmt->execute([$username, $password, $email])) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: Could not register.";
+    }
 }
 ?>
 
@@ -20,3 +24,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="password" name="password" required placeholder="Password">
     <input type="submit" value="Register">
 </form>
+
+<?php include('inc/footer.inc'); ?>

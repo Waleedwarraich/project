@@ -473,3 +473,35 @@ input[type=submit]:hover {
 html {
     background-color: cornsilk;
 }
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 15px;
+}
+
+/* Gallery and Pet Cards */
+.gallery, .results {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pet {
+    flex: 0 0 30%;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Media Query for Small Devices */
+@media (max-width: 768px) {
+    .pet {
+        flex: 0 0 100%;
+    }
+}
