@@ -1,7 +1,6 @@
 <?php
-include('inc/header.inc');
-include('inc/nav.inc');
-require_once 'inc/db_connect.inc';
+include('includes/header.inc');
+require_once 'includes/db_connect.inc';
 
 $searchTerm = isset($_GET['query']) ? '%' . htmlspecialchars($_GET['query']) . '%' : '';
 $typeFilter = isset($_GET['type']) ? htmlspecialchars($_GET['type']) : '';
@@ -40,4 +39,4 @@ if ($typeFilter) {
     </div>
 </div>
 
-<?php include('inc/footer.inc'); ?>
+<?php include('includes/footer.inc'); ?>

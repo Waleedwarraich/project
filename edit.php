@@ -1,8 +1,7 @@
 <?php
 // Include header, navigation, and database connection files
-include('inc/header.inc');
-include('inc/nav.inc');
-require_once 'inc/db_connect.inc';
+include('includes/header.inc');
+require_once 'includes/db_connect.inc';
 
 // Start session for authentication
 session_start();
@@ -100,4 +99,4 @@ if (isset($_SESSION['message'])) {
     </div>
 </form>
 
-<?php include('inc/footer.inc'); ?>
+<?php include('includes/footer.inc'); ?>

@@ -1,7 +1,6 @@
 <?php
-include('inc/header.inc');
-include('inc/nav.inc');
-require_once 'inc/db_connect.inc';
+include('includes/header.inc');
+require_once 'includes/db_connect.inc';
 session_start();
 
 if (!isset($_SESSION['user_id']) || !isset($_GET['id'])) {
@@ -25,4 +24,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </form>
 
-<?php include('inc/footer.inc'); ?>
+<?php include('includes/footer.inc'); ?>

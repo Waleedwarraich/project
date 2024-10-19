@@ -1,8 +1,7 @@
 <?php
 // Include header, navigation, and database connection files
-include('inc/header.inc');
-include('inc/nav.inc');
-require_once 'inc/db_connect.inc';
+include('includes/header.inc');
+require_once 'includes/db_connect.inc';
 
 // Start session for authentication
 session_start();
@@ -49,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<?php include "inc/header.inc"; ?>
+<?php include "includes/header.inc"; ?>
 <main>
     <h1 id="petsHeading">Add a Pet</h1>
     <p id="petsPara">You can add a new pet here.</p>
@@ -101,4 +100,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </main>
 
-<?php include "inc/footer.inc"; ?>
+<?php include "includes/footer.inc"; ?>
