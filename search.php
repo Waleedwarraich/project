@@ -1,3 +1,4 @@
+
 <?php
 include('includes/header.inc');
 require_once 'includes/db_connect.inc';
@@ -16,18 +17,9 @@ if ($typeFilter) {
 }
 ?>
 
+<!-- Display search results -->
 <div class="container">
     <h2>Search Results</h2>
-    <form method="get" action="search.php">
-        <input type="text" name="query" placeholder="Search by keyword">
-        <select name="type">
-            <option value="">All</option>
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-        </select>
-        <button type="submit">Search</button>
-    </form>
-
     <div class="results">
         <?php while ($pet = $stmt->fetch()): ?>
             <div class="pet">

@@ -3,8 +3,7 @@
 include('includes/header.inc');
 require_once 'includes/db_connect.inc';
 
-// Start session for authentication
-session_start();
+
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -47,8 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 ?>
-
-<?php include "includes/header.inc"; ?>
 <main>
     <h1 id="petsHeading">Add a Pet</h1>
     <p id="petsPara">You can add a new pet here.</p>

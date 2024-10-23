@@ -1,8 +1,6 @@
 <?php
-include('inc/header.inc');
-include('inc/nav.inc');
-require_once 'inc/db_connect.inc';
-session_start();
+include('includes/header.inc');
+require_once 'includes/db_connect.inc';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -17,11 +15,11 @@ $stmt->execute([$_SESSION['user_id']]);
     <h2>My Pets</h2>
     <?php while ($pet = $stmt->fetch()): ?>
         <div class="pet">
-            <img src="images/<?= htmlspecialchars($pet['image']) ?>" alt="<?= htmlspecialchars($pet['name']) ?>">
+            <img src="./<?= htmlspecialchars($pet['image']) ?>" alt="<?= htmlspecialchars($pet['name']) ?>">
             <h3><?= htmlspecialchars($pet['name']) ?></h3>
             <a href="details.php?id=<?= $pet['id'] ?>">View Details</a>
         </div>
     <?php endwhile; ?>
 </div>
 
-<?php include('inc/footer.inc'); ?>
+<?php include('includes/footer.inc'); ?>

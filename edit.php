@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 // Include header, navigation, and database connection files
 include('includes/header.inc');
 require_once 'includes/db_connect.inc';

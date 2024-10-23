@@ -19,7 +19,7 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo '<td><a href="details.php?id=' . $row["id"] . '">' . $row["petname"] . '</a></td>';
+                echo '<td><a href="details.php?id=' . $row["id"] . '">' . $row["name"] . '</a></td>';
                 echo "<td>" . $row["type"] . "</td>";
                 
 
@@ -40,3 +40,5 @@
     </table>
   </main>
 <?php include "includes/footer.inc";?>
+
+
