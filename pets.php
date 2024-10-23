@@ -14,10 +14,18 @@
           <th>Location</th>
         </tr>
         <?php
+        // SQL query to fetch all pets
         $sql = "SELECT * FROM pets";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(); // Execute the query
+
+        // Fetch all results into an associative array
+        $pets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Check if any pets were returned
+        if (count($pets) > 0) {
+            // Loop through each pet and display its details
+            foreach ($pets as $row) {
                 echo "<tr>";
                 echo '<td><a href="details.php?id=' . $row["id"] . '">' . $row["name"] . '</a></td>';
                 echo "<td>" . $row["type"] . "</td>";

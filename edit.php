@@ -1,14 +1,8 @@
 <?php
-session_start();
-?>
-
-<?php
 // Include header, navigation, and database connection files
 include('includes/header.inc');
 require_once 'includes/db_connect.inc';
 
-// Start session for authentication
-session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -20,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['id'])) {
     // Sanitize user input
     $id = $_GET['id'];
-    $name = htmlspecialchars($_POST['petname']);
+    $name = htmlspecialchars($_POST['name']);
     $description = htmlspecialchars($_POST['description']);
     $type = htmlspecialchars($_POST['type']);
     $age = (int) $_POST['age'];
@@ -31,11 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_GET['id'])) {
     if ($_FILES['image']['name']) {
         $image = $_FILES['image']['name'];
         move_uploaded_file($_FILES['image']['tmp_name'], "images/" . $image);
-        $sql = "UPDATE pets SET name = ?, description = ?, type = ?, image = ?, image_caption = ?, age = ?, location = ? WHERE id = ? AND added_by = ?";
+        $sql = "UPDATE pets SET name = ?, description = ?, type = ?, image = ?, caption = ?, age = ?, location = ? WHERE id = ? AND added_by = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$name, $description, $type, $image, $imageCaption, $age, $location, $id, $_SESSION['user_id']]);
     } else {
-        $sql = "UPDATE pets SET name = ?, description = ?, type = ?, image_caption = ?, age = ?, location = ? WHERE id = ? AND added_by = ?";
+        $sql = "UPDATE pets SET name = ?, description = ?, type = ?, caption = ?, age = ?, location = ? WHERE id = ? AND added_by = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$name, $description, $type, $imageCaption, $age, $location, $id, $_SESSION['user_id']]);
     }
@@ -71,7 +65,7 @@ if (isset($_SESSION['message'])) {
         <h2>Edit Pet</h2>
 
         <label for="pets-name">Pet Name:<i class="required">*</i></label>
-        <input type="text" id="pets-name" name="petname" value="<?= htmlspecialchars($pet['name']) ?>" placeholder="Provide a name for the pet" required class="form-control mb-3">
+        <input type="text" id="pets-name" name="name" value="<?= htmlspecialchars($pet['name']) ?>" placeholder="Provide a name for the pet" required class="form-control mb-3">
 
         <label for="type">Type:<i class="required">*</i></label>
         <select id="type" name="type" required class="form-control mb-3">
@@ -88,7 +82,7 @@ if (isset($_SESSION['message'])) {
         <p id="imageNotifier">Max size 500px</p>
 
         <label id='img_caption_title' for="image-caption">Image Caption:<i class="required">*</i></label>
-        <input type="text" id="image-caption" name="imageCaption" value="<?= htmlspecialchars($pet['image_caption']) ?>" placeholder="Describe the image in one word" required class="form-control mb-3">
+        <input type="text" id="image-caption" name="imageCaption" value="<?= htmlspecialchars($pet['caption']) ?>" placeholder="Describe the image in one word" required class="form-control mb-3">
 
         <label for="age">Age (Months):<i class="required">*</i></label>
         <input type="number" id="age" name="age" value="<?= htmlspecialchars($pet['age']) ?>" placeholder="Enter the age" required class="form-control mb-3">

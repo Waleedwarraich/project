@@ -10,13 +10,17 @@
 
         <?php
        $sql = "SELECT * FROM pets";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+       $stmt = $conn->prepare($sql);
+       $stmt->execute();
+       $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all results as an associative array
+
+       // Check if any pets were found
+       if (count($result) > 0) {
+           foreach ($result as $row) {
                 echo '<li>';
                 echo '<div class="image-container">';
-                echo '<img src="' . $row["image"] . '" alt="' . $row["petname"] . '">';
-                echo '<h2>' . $row["petname"] . '</h2>';
+                echo '<img src="' . $row["image"] . '" alt="' . $row["name"] . '">';
+                echo '<h2>' . $row["name"] . '</h2>';
                 echo '<div class="overlay-text">';
                 echo '<a href="details.php?id=' . $row["id"] . '">Explore more</a>';
                 echo '</div>';

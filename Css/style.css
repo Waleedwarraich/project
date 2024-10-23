@@ -505,3 +505,29 @@ body {
         flex: 0 0 100%;
     }
 }
+
+.action-buttons {
+    margin-top: 20px;
+    text-align: center; /* Center the buttons */
+}
+
+.btn {
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF; /* Bootstrap primary color */
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background-color: #28a745; /* Bootstrap success color */
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Bootstrap danger color */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+}
