@@ -33,8 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // If login is successful, store relevant info in session
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            
 
             // Redirect to the index page or dashboard
+            $_SESSION['message'] = [
+                'type' => 'toast',
+                'text' => 'Login Successful'
+            ];
+            
             header("Location: index.php");
             exit();
         } else {

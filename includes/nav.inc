@@ -5,7 +5,7 @@ session_start();
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-darkcyan">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
       <img src="./images/logo1.png" width="30" height="30" alt="Paw Logo">
@@ -49,7 +49,7 @@ session_start();
       <!-- Search bar -->
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn bg-light btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
       </form>
     </div>
   </div>

@@ -15,6 +15,7 @@ if ($typeFilter) {
     $stmt = $conn->prepare($sql);
     $stmt->execute([$searchTerm, $searchTerm]);
 }
+            
 ?>
 
 <!-- Display search results -->

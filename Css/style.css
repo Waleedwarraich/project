@@ -62,8 +62,7 @@ header {
 }
 
 main {
-    padding: 20px;
-    margin-bottom: 100px;
+    margin: 5%;
 }
 
 .main-section {
@@ -78,7 +77,6 @@ main {
 
 footer {
     text-align: center;
-    padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -112,6 +110,8 @@ h1, h3, h4, h5, h6 {
     font-family: 'Permanent Marker', cursive;
 }
 
+
+/* Base styles for larger screens (desktop) */
 #mainHeadingHome {
     float: left;
     padding-top: 10%;
@@ -123,11 +123,61 @@ h1, h3, h4, h5, h6 {
 #welcomeHeading {
     float: left;
     padding-top: 20%;
-    margin-left: -500px;
+    margin-left: -10%;
     font-size: 50px;
     color: darkcyan;
     flex-wrap: wrap;
 }
+
+/* Responsive for tablets */
+@media (max-width: 992px) {
+    #mainHeadingHome {
+        font-size: 60px;
+        padding-top: 8%;
+    }
+
+    #welcomeHeading {
+        font-size: 40px;
+        padding-top: 15%;
+        margin-left: -5%;
+    }
+}
+
+/* Responsive for mobile phones */
+@media (max-width: 768px) {
+    #mainHeadingHome {
+        font-size: 40px;
+        padding-top: 6%;
+        text-align: center;
+        float: none;
+    }
+
+    #welcomeHeading {
+        font-size: 30px;
+        padding-top: 10%;
+        margin-left: 0;
+        text-align: center;
+        float: none;
+    }
+}
+
+/* Extra small screens (very small devices) */
+@media (max-width: 576px) {
+    #mainHeadingHome {
+        font-size: 30px;
+        padding-top: 5%;
+    }
+
+    #welcomeHeading {
+        font-size: 20px;
+        padding-top: 8%;
+    }
+
+    body {
+        background-color: cornsilk;
+    }
+}
+
 
 #petsHeading {
     display: flex;
@@ -530,4 +580,111 @@ body {
 
 .btn:hover {
     opacity: 0.8; /* Slightly fade on hover */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    text-align: center;
+}
+
+#mainHeadingHome {
+    font-size: 2.5em;
+    color: #f07c33;
+}
+
+#welcomeHeading {
+    font-size: 1.8em;
+    color: #5eac85;
+}
+
+.circle-img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #5eac85;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
+.toast-error {
+    background-color: #f07c33;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-bar, .pet-type, .search-btn {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.1em;
+}
+
+.search-bar {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pet-type {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-btn {
+    background-color: #5eac85;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #f07c33;
+}
+
+/* Footer */
+footer {
+    background-color: #f07c33;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #mainHeadingHome {
+        font-size: 2em;
+    }
+
+    .circle-img {
+        width: 90%;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
 }
