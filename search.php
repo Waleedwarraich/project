@@ -24,7 +24,7 @@ if ($typeFilter) {
     <div class="results">
         <?php while ($pet = $stmt->fetch()): ?>
             <div class="pet">
-                <img src="images/<?= htmlspecialchars($pet['image']) ?>" alt="<?= htmlspecialchars($pet['name']) ?>">
+                <img src="./<?= htmlspecialchars($pet['image']) ?>" alt="<?= htmlspecialchars($pet['name']) ?>">
                 <h3><?= htmlspecialchars($pet['name']) ?></h3>
                 <a href="details.php?id=<?= $pet['id'] ?>">View Details</a>
             </div>

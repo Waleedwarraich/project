@@ -55,13 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Login Form -->
-<form method="post" action="login.php">
+
+
+
+<form id="loginForm" method="post" action="login.php">
     <div>
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required placeholder="Enter your username">
     </div>
     <div>
-        <label for="password">Password</label>
+        <label for="password">Password</label><br>
         <input type="password" id="password" name="password" required placeholder="Enter your password">
     </div>
     <div>

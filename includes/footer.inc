@@ -14,7 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php endif; ?>
     </a>
     
-    <p style="margin: 5px;">© Copyright <?php echo date('Y'); ?>. All Rights Reserved | Designed for Pets Victoria</p>
+    <p style="margin: 5px;">© Copyright s3994931. All Rights Reserved | Designed for Pets Victoria</p>
     
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>

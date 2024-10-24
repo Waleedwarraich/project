@@ -17,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<form method="post" action="register.php">
+<form id="registerForm" method="post" action="register.php">
+    <h1>Enter the following to register: </h1>
     <input type="text" name="username" required placeholder="Username">
     <input type="email" name="email" required placeholder="Email">
     <input type="password" name="password" required placeholder="Password">

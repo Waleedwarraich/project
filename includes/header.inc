@@ -24,9 +24,11 @@ error_reporting(E_ALL);
     <style>
 
     </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <?php include ('includes/nav.inc') ?>
     <script src="Js/main.js"></script>
+    
 </head>
     <?php include ('includes/db_connect.inc') ?>
 
