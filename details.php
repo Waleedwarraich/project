@@ -18,7 +18,7 @@
         
         if ($row) {
     ?>
-        <img style="display: block; margin: 0 auto;" src="<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>"><br>
+        <img class="detailImage" src="<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>"><br>
         <div class="detail-container">
             <div class="detail-item">
                 <i class="fas fa-clock"></i><br>

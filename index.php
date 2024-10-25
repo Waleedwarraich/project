@@ -14,28 +14,28 @@ include "includes/header.inc";
     </div>
 
     <!-- Main Heading -->
+    <!-- Random Image -->
+    <?php
+    $images = ["./images/cat1.jpeg", "./images/dog1.jpeg", "./images/dog2.jpeg", "./images/cat4.jpeg", "./images/dog3.jpeg"];
+    $randomImage = $images[array_rand($images)];
+    ?>
     <div class="first ">
         <div class="firstHeading">
             <h1 id="mainHeadingHome">Pets Victoria</h1>
             <h2 id="welcomeHeading">WELCOME TO PET ADOPTION</h2>
         </div>
 
-    <!-- Random Image -->
-    <?php
-    $images = ["./images/cat1.jpeg", "./images/dog1.jpeg", "./images/dog2.jpeg", "./images/cat4.jpeg", "./images/dog3.jpeg"];
-    $randomImage = $images[array_rand($images)];
-    ?>
     <img src="<?php echo $randomImage; ?>" alt="Random Pet Image" class="circle-img">
     </div>
     <div id="search">
     <form id="searchForm" method="get" action="search.php">
         <input id="floatingInputInvalid" type="text" name="query" placeholder="I am looking for...">
-        <select name="type">
+        <select class="petSelectionSearch" name="type">
             <option value="">Select your pet here</option>
             <option value="Dog">Dog</option>
             <option value="Cat">Cat</option>
         </select>
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-success">Search</button>
     </form>
     </div>
     <div class="second">
