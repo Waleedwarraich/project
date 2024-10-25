@@ -37,8 +37,8 @@
         <div class="description"><?php echo htmlspecialchars($row['description']); ?></div>
         
         <div class="action-buttons">
-            <a href="edit.php?id=<?php echo intval($row['id']); ?>" class="btn edit-btn">Edit</a>
-            <a href="delete.php?id=<?php echo intval($row['id']); ?>" class="btn delete-btn" onclick="return confirm('Are you sure you want to delete this pet?');">Delete</a>
+            <a href="edit.php?id=<?php echo intval($row['id']); ?>" class="btn edit-btn btn-primary">Edit</a>
+            <a href="delete.php?id=<?php echo intval($row['id']); ?>" class="btn delete-btn btn-danger" onclick="return confirm('Are you sure you want to delete this pet?');">Delete</a>
         </div>
     <?php
         } else {

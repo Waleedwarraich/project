@@ -581,7 +581,7 @@ html {
 /* Media Query for Small Devices */
 @media (max-width: 768px) {
     .pet {
-        flex: 0 0 100%;
+        flex: 0 0 95%;
     }
 }
 
@@ -786,4 +786,11 @@ footer {
 
 .detailImage {
     max-width: 100%;
+}
+
+.searchResults {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
 }

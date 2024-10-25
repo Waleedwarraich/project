@@ -19,12 +19,12 @@ if ($typeFilter) {
 ?>
 
 <!-- Display search results -->
-<div class="container">
+<div class="searchResults">
     <h2>Search Results</h2>
     <div class="results">
         <?php while ($pet = $stmt->fetch()): ?>
             <div class="pet">
-                <img src="./<?= htmlspecialchars($pet['image']) ?>" alt="<?= htmlspecialchars($pet['name']) ?>">
+                <img class="detailImage" src="./<?= htmlspecialchars($pet['image']) ?>" alt="<?= htmlspecialchars($pet['name']) ?>">
                 <h3><?= htmlspecialchars($pet['name']) ?></h3>
                 <a href="details.php?id=<?= $pet['id'] ?>">View Details</a>
             </div>
