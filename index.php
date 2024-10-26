@@ -7,7 +7,7 @@ include "includes/header.inc";
     <div id="toast-container">
         <?php
         if (isset($_SESSION['message'])) {
-            echo '<div class="toast ' . $_SESSION['message']['type'] . '">' . $_SESSION['message']['text'] . '</div>';
+            echo '<div class="alert alert-' . $_SESSION['message']['type'] . '">' . $_SESSION['message']['text'] . '</div>';
             unset($_SESSION['message']);
         }
         ?>

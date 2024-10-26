@@ -416,26 +416,6 @@ input[type=submit]:hover {
 }
 
 
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-
-.alert-success {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-}
-
-.alert-error {
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-}
-
-
 
 
 .container {
@@ -719,11 +699,6 @@ footer {
         width: 100%;
     }
 
-    #toast-container {
-        display: flex;
-        justify-self: start;
-        align-items: start;
-    }
 }
 
 /* Apply flexbox to the whole page layout */
@@ -794,3 +769,6 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
+
+

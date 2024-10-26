@@ -9,55 +9,50 @@ include('includes/header.inc');       // Assuming header includes HTML <head> an
 require_once 'includes/db_connect.inc';  // Database connection details
 
 // Start the session at the top
-// Check if session is already started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
 
 // Check if the form is submitted (login form)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Sanitize and fetch user input
     $username = htmlspecialchars(trim($_POST['username']));
-    $password = trim($_POST['password']);  // Password doesn't need special chars handling
+    $password = trim($_POST['password']);
 
     try {
         // Query to check if the username exists in the 'members' table
         $sql = "SELECT * FROM members WHERE username = ?";
-        $stmt = $conn->prepare($sql);       // Use prepared statement to prevent SQL injection
-        $stmt->execute([$username]);        // Execute the query with the user's username
-        $user = $stmt->fetch();             // Fetch the user data if available
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
 
         // Verify if user exists and password matches
         if ($user && password_verify($password, $user['password'])) {
-            // If login is successful, store relevant info in session
+            // Store relevant info in session for logged-in user
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            
 
-            // Redirect to the index page or dashboard
+            // Set the success message in session for pop-up display
             $_SESSION['message'] = [
-                'type' => 'toast',
+                'type' => 'success',
                 'text' => 'Login Successful'
             ];
-            
+
+            // Redirect to the index page
             header("Location: index.php");
             exit();
         } else {
-            // If login fails, display an error message
+            // If login fails, set an error message
             $error_message = "Invalid username or password!";
         }
     } catch (PDOException $e) {
-        // Catch any errors related to the database connection or query execution
+        // Handle database errors
         $error_message = "Error: " . $e->getMessage();
     }
 }
 ?>
 
 <!-- Login Form -->
-
-
-
 <form id="loginForm" method="post" action="login.php">
     <div>
         <label for="username">Username</label>
