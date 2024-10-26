@@ -24,21 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pets`
+-- Table structure for table `members`
 --
 
-CREATE TABLE `pets` (
+CREATE TABLE `members` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `caption` varchar(100) NOT NULL,
-  `type` varchar(50) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `location` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
-  `added_by` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (`added_by`) REFERENCES `members`(`id`)
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -46,20 +40,19 @@ CREATE TABLE `pets` (
 --
 
 --
--- Indexes for table `pets`
+-- Indexes for table `members`
 --
-ALTER TABLE `pets`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `added_by` (`added_by`);
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `pets`
+-- AUTO_INCREMENT for table `members`
 --
-ALTER TABLE `pets`
+ALTER TABLE `members`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
