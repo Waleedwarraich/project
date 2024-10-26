@@ -91,8 +91,8 @@ if (isset($_SESSION['message'])) {
         <input type="text" id="location" name="location" value="<?= htmlspecialchars($pet['location']) ?>" placeholder="Enter the location" required class="form-control mb-3">
 
         <div class="btns">
-            <button id="submissionBtn" class="btn btn-success">Update Pet <i class="fa fa-check"></i></button>
-            <a href="index.php" id="cancelBtn" class="btn btn-danger">Cancel <i class="fa fa-close"></i></a>
+            <button class="btn btn-success">Update Pet <i class="fa fa-check"></i></button>
+            <a href="index.php" class="btn btn-danger">Cancel <i class="fa fa-close"></i></a>
         </div>
     </div>
 </form>

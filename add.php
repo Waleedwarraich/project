@@ -90,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" id="location" name="location" placeholder="Enter the location" required class="form-control mb-3">
 
             <div class="btns">
-                <button id="submissionBtn" class="btn btn-success">Submit <i class="fa fa-check"></i></button>
-                <a href="index.php" id="cancelBtn" class="btn btn-danger">Cancel <i class="fa fa-close"></i></a>
+                <button class="btn btn-success">Submit <i class="fa fa-check"></i></button>
+                <a href="index.php" class="btn btn-danger">Cancel <i class="fa fa-close"></i></a>
             </div>
         </div>
     </form>

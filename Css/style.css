@@ -284,27 +284,6 @@ input[type=submit]:hover {
     font-size: small;
 }
 
-#submissionBtn {
-    border: 2px solid transparent;
-    border-radius: 20px;
-    font-size: medium;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #3c763d;
-}
-
-#cancelBtn {
-    border: 2px solid transparent;
-    border-radius: 20px;
-    font-size: medium;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: lightgray;
-    text-decoration: none;
-    color: black;
-}
 #submissionBtn:hover, #cancelBtn:hover {
     background-color: rgba(0, 128, 0, 0.1);
     border-color: green;
