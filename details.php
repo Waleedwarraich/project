@@ -1,5 +1,5 @@
 <?php include "includes/header.inc"; ?>
-<main>
+<main style="display: block;">
     <?php
     include "includes/db_connect.inc";
     // Fetch pet details from the database
@@ -18,6 +18,7 @@
         
         if ($row) {
     ?>
+    
         <img class="detailImage" src="<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>"><br>
         <div class="detail-container">
             <div class="detail-item">

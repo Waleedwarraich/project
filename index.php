@@ -16,8 +16,10 @@ include "includes/header.inc";
     <!-- Main Heading -->
     <!-- Random Image -->
     <?php
-    $images = ["./images/cat1.jpeg", "./images/dog1.jpeg", "./images/dog2.jpeg", "./images/cat4.jpeg", "./images/dog3.jpeg"];
-    $randomImage = $images[array_rand($images)];
+    $sql = "SELECT image FROM pets ORDER BY created_at DESC LIMIT 4";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $recentImages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <div class="first ">
         <div class="firstHeading">
@@ -25,7 +27,28 @@ include "includes/header.inc";
             <h2 id="welcomeHeading">WELCOME TO PET ADOPTION</h2>
         </div>
 
-    <img src="<?php echo $randomImage; ?>" alt="Random Pet Image" class="circle-img">
+        <?php if (!empty($recentImages)): ?>
+        <div id="carouselExample" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 600px;">
+            <div class="carousel-inner">
+                <?php foreach ($recentImages as $index => $image): ?>
+                    <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                        <img src="<?php echo htmlspecialchars($image['image']); ?>" class="d-block w-100 carousel-img" alt="Pet Image">
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    <?php else: ?>
+        <p class="text-center">No recent images available.</p>
+    <?php endif; ?>
     </div>
     <div id="search">
     <form id="searchForm" method="get" action="search.php">

@@ -579,6 +579,8 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: cornsilk;
 }
@@ -750,4 +752,15 @@ footer {
 }
 
 
-    
+.carousel-img {
+    max-height: 350px;
+    max-width: 350px;
+}
+
+#petTypeDropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
