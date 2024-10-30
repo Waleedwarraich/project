@@ -1,5 +1,5 @@
 <?php include "includes/header.inc"; ?>
-<main class="mainDetails">
+<main style="display: block;">
     <?php
     include "includes/db_connect.inc";
     // Fetch pet details from the database
